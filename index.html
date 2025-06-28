@@ -9,10 +9,27 @@
     <link rel="stylesheet" href="./styles/globals.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/animations.css" />
+    <link rel="icon" href="./images/favicon.ico" sizes="any" />
+    <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./images/mobile-icon.png" />
   </head>
   <body class="page">
     <header class="header"></header>
-    <main></main>
+    <main>
+      <picture>
+        <source srcset="./images/articles/first/article.avif" type="image/avif">
+        <source srcset="./images/articles/first/article.webp" type="image/webp">
+        <img 
+          src="./images/articles/first/article-1x.png" 
+          srcset="
+          ./images/articles/first/article-1x.png 1x,
+          ./images/articles/first/article-2x.png 2x,
+          ./images/articles/first/article-3x.png 3x
+          "
+          alt="Описание"
+        />
+      </picture> 
+    </main>
     <script src="./scripts/like.js"></script>
   </body>
 </html>
