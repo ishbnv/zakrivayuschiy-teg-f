@@ -16,3 +16,20 @@
   font-family: var(--main-font-family), sans-serif;
   font-weight: var(--text-font-weight);
 }
+
+.container {
+
+}
+
+.header {
+
+}
+
+.logo {
+  font-family: var(--accent-font-family), sans-serif;
+}
+
+.header__title {
+  font-family: var(--accent-font-family), sans-serif;
+}
+

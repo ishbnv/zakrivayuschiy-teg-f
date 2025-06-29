@@ -14,11 +14,26 @@
     <link rel="apple-touch-icon" href="./images/mobile-icon.png" />
   </head>
   <body class="page">
-    <header class="header"></header>
+    <header class="header">
+      <div class="cover">
+        <span class="logo">&lt; HTML	&gt;</span>
+        <h1 class="header__title">Закрывающий тег</h1>
+      </div>
+    </header>
     <main>
       <picture>
-        <source srcset="./images/articles/first/article.avif" type="image/avif">
-        <source srcset="./images/articles/first/article.webp" type="image/webp">
+        <source srcset="
+          ./images/articles/first/article-1x.avif 1x,
+          ./images/articles/first/article-2x.avif 2x,
+          ./images/articles/first/article-3x.avif 3x
+          " 
+          type="image/avif">
+        <source srcset="
+          ./images/articles/first/article-1x.webp 1x,
+          ./images/articles/first/article-2x.webp 2x,
+          ./images/articles/first/article-3x.webp 3x
+          " 
+          type="image/webp">
         <img 
           src="./images/articles/first/article-1x.png" 
           srcset="
@@ -26,7 +41,7 @@
           ./images/articles/first/article-2x.png 2x,
           ./images/articles/first/article-3x.png 3x
           "
-          alt="Описание"
+          alt="Фургон на шоссе ночью с видом на горы и звездное небо"
         />
       </picture> 
     </main>
