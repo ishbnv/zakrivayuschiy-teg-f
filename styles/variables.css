@@ -11,7 +11,7 @@
     --text-size: 18px;
     --text-font-weight: 400;
     --line-height: 21px;
-    --title-font-weight: 700;
+    --title-font-weight: 785;
     --container-width: clamp(26.25rem, 26.291vw + 20.088rem, 43.75rem);
     --card-title-container: 6px 10px;
     --card-border: 2px solid var(--black);
@@ -20,4 +20,9 @@
     --card-content-padding: 25px;
     --label-size: 14px;
     --background-image: repeating-linear-gradient();
+    --button-font-size: 14px;
+    --section-gap: 50px;
+    --floppy-size: 21px;
+    --modal-padding: 30px;
+    --modal-font-size: 14px;
 }

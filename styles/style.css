@@ -19,11 +19,17 @@
   line-height: var(--line-height);
 }
 
+.main {
+  display: grid;
+  gap: var(--section-gap);
+}
+
 .container {
   display: flex;
   flex-direction: column;
   background-color: var(--white);
   max-inline-size: var(--container-width);
+  margin: auto;
 }
 
 .border {
@@ -65,8 +71,8 @@
   gap: var(--card-gap);
 }
 
-.card {
-  margin: auto;
+.save-wrapper {
+  margin-bottom: 103px;
 }
 
 .card__title {
@@ -101,7 +107,12 @@
 
 .button {
   background-color: transparent;
-  inline-size: fit-content;
+  inline-size: max-content;
+}
+
+.button__text {
+  font-family: var(--accent-font-family), sans-serif;
+  font-size: var(--button-font-size);
 }
 
 .card__icon-button {
@@ -109,9 +120,7 @@
 }
 
 .card__like-button {
-  padding: 10px 35px;
-  font-family: var(--accent-font-family), sans-serif;
-  font-size: 14px;
+  padding: 6px 35px;
 }
 
 .card__label {
@@ -139,6 +148,54 @@
   }
 }
 
+.save__button {
+  display: flex;
+  inline-size: 340px;
+  padding: 15px 18px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.floppy-icon {
+  inline-size: var(--floppy-size);
+  block-size: var(--floppy-size);
+}
+
+.modal[open] {
+  display: grid;
+  padding: var(--modal-padding);
+  gap: 30px;
+  inline-size: 353px;
+}
+
+.modal__content {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.modal__icon {
+  --floppy-size: 39px;
+}
+
+.modal__text {
+  font-family: var(--accent-font-family), sans-serif;
+  font-size: var(--modal-font-size);
+  --line-height: 150%;
+  line-height: var(--line-height);
+  text-transform: uppercase;
+}
+
+.modal__button {
+  inline-size: 100%;
+  padding: 9px 17px;
+}
+
+.modal::backdrop {
+  background: rgb(0 0 0 / .75);
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -149,10 +206,33 @@
   white-space: nowrap;
 } 
 
-@media (width <= 425px) {
+@media (width <= 375px) {
 
   .container {
     inline-size: 100%;
+  }
+
+  .save-wrapper {
+    align-items: center;
+  }
+
+  .save__button {
+    inline-size: 306px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .logo {
+    --logo-size: clamp(2.8125rem, 1.358rem + 7.2727vw, 3.0625rem);
+  }
+
+  .save__button .floppy-icon  {
+    --floppy-size: 28px;
+  }
+
+  .modal[open] {
+    --modal-padding: 30px 35px;
+    inline-size: 341px;
   }
 }
 
