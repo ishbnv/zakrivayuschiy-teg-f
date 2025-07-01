@@ -19,10 +19,13 @@
     --card-content-gap: 25px;
     --card-content-padding: 25px;
     --label-size: 14px;
-    --background-image: repeating-linear-gradient();
     --button-font-size: 14px;
     --section-gap: 50px;
     --floppy-size: 21px;
     --modal-padding: 30px;
     --modal-font-size: 14px;
+    --background-image: 
+        repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
+        repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
+        linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
 }
