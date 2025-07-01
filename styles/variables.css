@@ -1,7 +1,7 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 
 :root {
-    --black: #000;
+    --accent-color: #000;
     --white: #fff;
     --main-font-family: 'Inter-Variable';
     --accent-font-family: 'PressStart2P-Regular';
@@ -14,7 +14,7 @@
     --title-font-weight: 785;
     --container-width: clamp(26.25rem, 26.291vw + 20.088rem, 43.75rem);
     --card-title-container: 6px 10px;
-    --card-border: 2px solid var(--black);
+    --card-border: 2px solid var(--accent-color);
     --card-gap: 50px;
     --card-content-gap: 25px;
     --card-content-padding: 25px;

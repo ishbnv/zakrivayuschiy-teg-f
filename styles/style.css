@@ -72,10 +72,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--card-gap);
-}
-
-.save-wrapper {
-  margin-bottom: 103px;
+  justify-items: center;
 }
 
 .card__title {
@@ -110,8 +107,21 @@
 }
 
 .button {
+  position: relative;
   background-color: transparent;
   inline-size: max-content;
+  overflow: hidden;
+  transition: color 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.button__text,
+.floppy-icon {
+  position: relative;
+  z-index: 1;
+  color: var(--accent-color);
+  fill: currentColor;
+  transition: color 0.5s ease-in-out;
 }
 
 .button__text {
@@ -119,8 +129,36 @@
   font-size: var(--button-font-size);
 }
 
+.button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 0 var(--accent-color);
+  transition: box-shadow 0.3s ease;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button:hover span,
+.button:hover svg {
+  position: relative;
+  color: var(--white);
+}
+
 .card__icon-button {
   border: none;
+  padding: initial;
+  background-color: transparent;
 }
 
 .card__like-button {
@@ -158,6 +196,7 @@
   padding: 15px 18px;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--white);
 }
 
 .floppy-icon {
@@ -198,6 +237,10 @@
 
 .modal::backdrop {
   background: rgb(0 0 0 / .75);
+}
+
+.mb100 {
+  margin-block-end: 100px;
 }
 
 .retro {
@@ -248,7 +291,7 @@
     --logo-size: clamp(2.8125rem, 1.358rem + 7.2727vw, 3.0625rem);
   }
 
-  .save__button .floppy-icon  {
+  .save__button .floppy-icon {
     --floppy-size: 28px;
   }
 
