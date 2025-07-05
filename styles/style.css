@@ -324,7 +324,7 @@
 }
 
 .retro {
-  filter: sepia(1) contrast(2) brightness(200%);
+  filter: brightness(200%);
 }
 
 .low-contrast {
@@ -348,7 +348,7 @@
 }
 
 .warm-tone {
-  filter: hue-rotate(30deg) saturate(120%);
+  filter: hue-rotate(30deg);
 }
 
 .grayscale {
