@@ -1,3 +1,6 @@
+/* stylelint-disable property-no-unknown */
+/* stylelint-disable no-unknown-animations */
+
 /* Здесь вы напишете основную часть стилей страницы.
 
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
@@ -13,13 +16,13 @@
 .page {
   font-family: var(--main-font-family), sans-serif;
   font-size: var(--text-size);
+  line-height: var(--line-height);
+  background-image: var(--background-image);
+  background-size: cover;
+  background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: 'wght' var(--text-font-weight);
-  line-height: var(--line-height);
-  background-image: var(--background-image);
-  background-attachment: fixed;
-  background-size: cover;
 }
 
 .main {
@@ -30,9 +33,9 @@
 .container {
   display: flex;
   flex-direction: column;
+  margin: auto;
   background-color: var(--white);
   max-inline-size: var(--container-width);
-  margin: auto;
 }
 
 .border {
@@ -40,8 +43,8 @@
 }
 
 .title {
-  font-variation-settings: 'wght' var(--title-font-weight);
   line-height: normal;
+  font-variation-settings: 'wght' var(--title-font-weight);
 }
 
 .card .border:not(:last-child) {
@@ -71,8 +74,8 @@
 .card-wrapper {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--card-gap);
   justify-items: center;
+  gap: var(--card-gap);
 }
 
 .card__title {
@@ -108,20 +111,18 @@
 
 .button {
   position: relative;
-  background-color: transparent;
-  inline-size: max-content;
   overflow: hidden;
-  transition: color 0.5s ease-in-out;
+  background-color: var(--white);
   cursor: pointer;
+  inline-size: max-content;
 }
 
 .button__text,
 .floppy-icon {
   position: relative;
-  z-index: 1;
-  color: var(--accent-color);
+  color: var(--white);
   fill: currentColor;
-  transition: color 0.5s ease-in-out;
+  mix-blend-mode: difference;
 }
 
 .button__text {
@@ -130,8 +131,8 @@
 }
 
 .button:focus {
-  outline: none;
   box-shadow: 2px 2px 0 0 var(--accent-color);
+  outline: none;
   transition: box-shadow 0.3s ease;
 }
 
@@ -140,35 +141,37 @@
   position: absolute;
   inset: 0;
   background: var(--accent-color);
+  transition: transform 0.5s ease-in-out;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.5s ease-in-out;
 }
 
 .button:hover::before {
   transform: scaleX(1);
 }
 
-.button:hover span,
-.button:hover svg {
-  position: relative;
-  color: var(--white);
-}
-
 .card__icon-button {
-  border: none;
+  block-size: var(--heart-size);
+  border: 2px solid transparent;
   padding: initial;
   background-color: transparent;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.card__icon-button:focus-visible {
+  border: var(--card-border);
 }
 
 .card__like-button {
-  padding: 6px 35px;
+  inline-size: 130px;
 }
 
 .card__label {
   position: absolute;
   top: clamp(1.25rem, 0.469vw + 1.14rem, 1.563rem);
   right: clamp(0.625rem, 1.408vw + 0.295rem, 1.563rem);
+  opacity: .5;
   font-family: var(--accent-font-family);
   font-size: var(--label-size);
   text-shadow:
@@ -176,7 +179,6 @@
     0 1px var(--white), 
     1px 0 var(--white), 
     0 -1px var(--white);
-  opacity: .5;
   mix-blend-mode: hard-light;
 }
 
@@ -185,37 +187,111 @@
   .card__label {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--white);
-    /* stylelint-disable-next-line property-no-unknown */
     text-stroke: 1px var(--white);
   }
 }
 
 .save__button {
   display: flex;
-  inline-size: 340px;
-  padding: 15px 18px;
   justify-content: space-between;
   align-items: center;
+  padding: 15px 18px;
   background-color: var(--white);
+  inline-size: 340px;
 }
+
+/* icons */
 
 .floppy-icon {
   inline-size: var(--floppy-size);
   block-size: var(--floppy-size);
 }
 
+.like-icon .heart {
+  transform-origin: center;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.contour {
+  transition: fill 0.1s linear;
+}
+
+.core {
+  transition: fill 0.3s linear 0.03s;
+}
+
+.main-body {
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:hover .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0s;
+}
+
+.like-icon:active .main-body {
+  --animation-fill-color: #F00;
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:active .core {
+  --animation-fill-color: #F00;
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0s;
+}
+
+.like-icon.is-liked .contour {
+  --contour-color: #F00;
+  fill: var(--contour-color);
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .core {
+  --animation-fill-color: #F00;
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0s;
+}
+
+.like-icon.is-liked .main-body {
+  --animation-fill-color: #F00;
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .heart {
+  animation: heart-scale 0.3s ease-in 0.1s;
+}
+
+.like-icon.is-liked .sparks {
+  --animation-fill-color: #F00;
+  animation: sparks-animation 0.3s ease-in 0.3s;
+}
+
+/* icons--end */
+
+/* modal */
+
 .modal[open] {
   display: grid;
-  padding: var(--modal-padding);
   gap: 30px;
+  padding: var(--modal-padding);
   inline-size: 353px;
 }
 
 .modal__content {
   display: grid;
   grid-template-columns: max-content 1fr;
-  gap: 20px;
   align-items: center;
+  gap: 20px;
 }
 
 .modal__icon {
@@ -223,21 +299,25 @@
 }
 
 .modal__text {
+  --line-height: 150%;
   font-family: var(--accent-font-family), sans-serif;
   font-size: var(--modal-font-size);
-  --line-height: 150%;
   line-height: var(--line-height);
   text-transform: uppercase;
 }
 
 .modal__button {
-  inline-size: 100%;
   padding: 9px 17px;
+  inline-size: 100%;
 }
 
 .modal::backdrop {
   background: rgb(0 0 0 / .75);
 }
+
+/* modal--end */
+
+/* filters & settings */
 
 .mb100 {
   margin-block-end: 100px;
@@ -282,9 +362,9 @@
   }
 
   .save__button {
-    inline-size: 306px;
     flex-direction: column;
     gap: 8px;
+    inline-size: 306px;
   }
 
   .logo {
