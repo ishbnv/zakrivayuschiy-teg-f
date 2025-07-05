@@ -327,7 +327,7 @@
   filter: brightness(200%);
 }
 
-.low-contrast {
+.contrast {
   filter: contrast(50%);
 }
 
@@ -335,7 +335,7 @@
   filter: blur(20px);
 }
 
-.high-saturation {
+.saturate {
   filter: saturate(161%);
 }
 
@@ -347,7 +347,7 @@
   filter: sepia(80%);
 }
 
-.warm-tone {
+.hue-rotate {
   filter: hue-rotate(30deg);
 }
 
