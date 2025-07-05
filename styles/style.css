@@ -324,7 +324,7 @@
 }
 
 .retro {
-  filter: brightness(200%);
+  filter: brightness(200%) sepia(80%);
 }
 
 .contrast {
