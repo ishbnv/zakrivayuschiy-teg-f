@@ -347,8 +347,8 @@
   filter: sepia(80%);
 }
 
-.black-and-white-blur {
-  filter: sepia(1) blur(2px) invert(1);
+.warm-tone {
+  filter: hue-rotate(30deg) saturate(120%);
 }
 
 .grayscale {
