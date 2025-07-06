@@ -60,14 +60,14 @@
 }
 
 .logo {
-  font-family: var(--accent-font-family), sans-serif;
+  font-family: var(--accent-font-family), fantasy;
   font-size: var(--logo-size);
   line-height: normal;
 }
 
 .header__title {
-  font-family: var(--accent-font-family), sans-serif;
-  font-size: var(--h1-size);
+  font-family: var(--accent-font-family), fantasy;
+  font-size: var(--page-title-size);
   text-transform: uppercase;
 }
 
@@ -76,12 +76,13 @@
   grid-template-columns: 1fr;
   justify-items: center;
   gap: var(--card-gap);
+  margin-block-end: 100px;
 }
 
 .card__title {
   display: inline-block;
   padding: var(--card-title-container);
-  font-size: var(--h2-size);
+  font-size: var(--title-size);
 }
 
 .card__image-wrapper {
@@ -94,6 +95,8 @@
   background-color: blueviolet;
   block-size: 100%;
   inline-size: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .card__content {
@@ -115,6 +118,7 @@
   background-color: var(--white);
   cursor: pointer;
   inline-size: max-content;
+  transition: box-shadow 0.3s ease;
 }
 
 .button__text,
@@ -126,21 +130,20 @@
 }
 
 .button__text {
-  font-family: var(--accent-font-family), sans-serif;
+  font-family: var(--accent-font-family), fantasy;
   font-size: var(--button-font-size);
 }
 
 .button:focus {
   box-shadow: 2px 2px 0 0 var(--accent-color);
   outline: none;
-  transition: box-shadow 0.3s ease;
 }
 
 .button::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--accent-color);
+  background: var(--btn-default-hover-background);
   transition: transform 0.5s ease-in-out;
   transform: scaleX(0);
   transform-origin: left;
@@ -172,7 +175,7 @@
   top: clamp(1.25rem, 0.469vw + 1.14rem, 1.563rem);
   right: clamp(0.625rem, 1.408vw + 0.295rem, 1.563rem);
   opacity: .5;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy;
   font-size: var(--label-size);
   text-shadow:
     -1px 0 var(--white), 
@@ -300,7 +303,7 @@
 
 .modal__text {
   --line-height: 150%;
-  font-family: var(--accent-font-family), sans-serif;
+  font-family: var(--accent-font-family), fantasy;
   font-size: var(--modal-font-size);
   line-height: var(--line-height);
   text-transform: uppercase;
@@ -318,10 +321,6 @@
 /* modal--end */
 
 /* filters & settings */
-
-.mb100 {
-  margin-block-end: 100px;
-}
 
 .retro {
   filter: brightness(200%) sepia(80%);

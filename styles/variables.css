@@ -3,15 +3,18 @@
 :root {
     --accent-color: #000;
     --white: #fff;
+    --contour-color: #000;
+    --animation-fill-color: #000;
+    --btn-default-hover-background: #000;
     --main-font-family: 'Inter-Variable';
     --accent-font-family: 'PressStart2P-Regular';
     --logo-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
-    --h1-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-    --h2-size: 18px;
+    --page-title-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+    --title-size: 18px;
     --text-size: 18px;
     --text-font-weight: 400;
     --line-height: 21px;
-    --title-font-weight: 785;
+    --title-font-weight: 700;
     --container-width: clamp(26.25rem, 26.291vw + 20.088rem, 43.75rem);
     --card-title-container: 6px 10px;
     --card-border: 2px solid var(--accent-color);
@@ -22,8 +25,6 @@
     --button-font-size: 14px;
     --section-gap: 50px;
     --heart-size: 39px;
-    --contour-color: #000;
-    --animation-fill-color: #000;
     --floppy-size: 21px;
     --modal-padding: 30px;
     --modal-font-size: 14px;
